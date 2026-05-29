@@ -1,0 +1,6 @@
+{
+  "name": "SANTARA",
+  "description": "Landing page premium, aesthetic, dan personal untuk dekorasi kamar & hadiah unik dari Sántara.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
