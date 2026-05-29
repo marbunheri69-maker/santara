@@ -10,15 +10,12 @@ import { CartItem } from './types';
 import AestheticHeader from './components/AestheticHeader';
 import AestheticFooter from './components/AestheticFooter';
 import CartDrawer from './components/CartDrawer';
-import NfcRitualSimulator from './components/NfcRitualSimulator';
-import MemoryFrameCustomizer from './components/MemoryFrameCustomizer';
-import GraduationCustomizer from './components/GraduationCustomizer';
 
 // Import generated image paths
-const HERO_IMG = '/src/assets/images/hero.jpeg';
-const NFC_LAMP_IMG = '/src/assets/images/lampu1.jpeg';
-const MEMORY_FRAME_IMG = '/src/assets/images/bingkai1.jpeg';
-const GRAD_PLAQUE_IMG = '/src/assets/images/graduestion.jpeg';
+const HERO_IMG = '/images/hero.jpeg';
+const NFC_LAMP_IMG = '/images/lampu1.jpeg';
+const MEMORY_FRAME_IMG = '/images/bingkai1.jpeg';
+const GRAD_PLAQUE_IMG = '/images/graduestion.jpeg';
 
 // Tipe Data untuk TypeScript agar terhindar dari error data type
 interface ProductDetail {
@@ -33,7 +30,8 @@ interface ProductDetail {
 export default function App() {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [activeWorkspace, setActiveWorkspace] = useState<'nfc' | 'memory' | 'graduation'>('nfc');
+  // Tambahkan 'null' ke dalam tipe data agar bisa menerima nilai kosong
+const [activeWorkspace, setActiveWorkspace] = useState<'nfc' | 'memory' | 'graduation' | null>(null);
   const [activeButton, setActiveButton] = useState<'koleksi' | 'workshop' | null>(null);
 
   // Interactive notifications state
@@ -57,7 +55,7 @@ export default function App() {
       price: "Rp 75.000",
       badges: ["Smart NFC", "Sleep Ritual", "Aesthetic"],
       // Sediakan path gambar kedua kamu atau gunakan placeholder sementara ini dulu
-      images: [NFC_LAMP_IMG, "src/assets/images/lampu2.jpeg"], 
+      images: [NFC_LAMP_IMG, "/images/lampu2.jpeg"], 
       desc: "Lampu akrilik berbentuk bulan dengan logo SANTARA. Cukup sentuhkan HP kustom Anda ke lampu untuk meredupkan pikiran, otomatis memutar playlist tidur, afirmasi hangat, white noise, dan jurnal pribadi.",
       longDesc: "Dibuat dengan akrilik premium berkualitas tinggi setebal 5mm dan dudukan kayu pinus pilihan. Dilengkapi dengan chip kustom NFC internal yang kompatibel dengan iOS dan Android untuk otomasi ritual malam Anda."
     },
@@ -65,7 +63,7 @@ export default function App() {
       title: "Botanical Memory Polaroid Frame",
       price: "Rp 70.000",
       badges: ["Dried Flowers", "Polaroid Vibes", "Couple Gift"],
-      images: [MEMORY_FRAME_IMG, "/src/assets/images/bingkai2.jpeg"],
+      images: [MEMORY_FRAME_IMG, "/images/bingkai2.jpeg"],
       desc: "Bingkai foto kustom kayu Oak/Walnut klasik dilengkapi hiasan rute kuntum bunga kering asli (pink sakura/lavender) hasil kurasi floris kami. Sempurna untuk mengabadikan anniversary atau merayakan jalinan persahabatan manis.",
       longDesc: "Menggunakan kaca anti-refleksi premium dan bunga edelweiss serta caspea asli yang diawetkan melalui proses pengeringan laboratorium sehingga warnanya tidak pudar bertahun-tahun."
     },
@@ -73,7 +71,7 @@ export default function App() {
       title: "Santara Luxury Graduation Acrylic",
       price: "Rp 80.000",
       badges: ["8mm Thick Acrylic", "Laser Engraved", "Graduation"],
-      images: [GRAD_PLAQUE_IMG, "/src/assets/images/graduestio1.jpeg"],
+      images: [GRAD_PLAQUE_IMG, "/images/graduestio1.jpeg"],
       desc: "Hadiah kustom kelulusan berbahan akrilik tebal yang dipotong presisi. Kustomisasi nama wisudawan, gelar akademis, lambang universitas, ucapan selamat, dan sematkan portrait terbaik wisudawan ke dalam plakat meja premium.",
       longDesc: "Dipotong menggunakan mesin Laser CO2 ultra-presisi tinggi menghasilkan tepian bevel crystal-clear yang mewah. Ketebalan akrilik 8mm solid memberikan kesan premium yang kokoh di meja."
     }
@@ -340,7 +338,7 @@ export default function App() {
             onClick={(e) => e.stopPropagation()}
           >
             <span className="font-serif text-base sm:text-lg font-bold text-brand-brown-900">
-              Rp 229.000
+              Rp 75.000
             </span>
 
             <button
@@ -391,7 +389,7 @@ export default function App() {
             onClick={(e) => e.stopPropagation()}
           >
             <span className="font-serif text-base sm:text-lg font-bold text-brand-brown-900">
-              Rp 189.000
+              Rp 70.000
             </span>
 
             <button
@@ -442,7 +440,7 @@ export default function App() {
             onClick={(e) => e.stopPropagation()}
           >
             <span className="font-serif text-base sm:text-lg font-bold text-brand-brown-900">
-              Rp 169.000
+              Rp 80.000
             </span>
 
             <button
