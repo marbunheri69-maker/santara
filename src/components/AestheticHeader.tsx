@@ -26,11 +26,11 @@ export default function AestheticHeader({ cartCount, onCartClick, onNavigateWork
         
         {/* Brand Logo */}
         <a href="#" className="flex items-center z-50">
-          <span className="font-serif text-2xl font-black tracking-widest bg-gradient-to-r from-blue-500 via-indigo-400 to-purple-500 bg-clip-text text-transparent">
+          <span className="font-serif text-2xl font-black tracking-widest bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-300 bg-clip-text text-transparent">
             SANTARA
           </span>
         </a>
-
+        
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8 text-[13px] font-semibold text-brand-brown-700 tracking-wider uppercase">
           {navLinks.map((link) => (

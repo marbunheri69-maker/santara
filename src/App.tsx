@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { 
   Sparkles, Heart, Gift, Award, Compass, ArrowRight, Check, ShieldCheck, 
-  Truck, Star, MessageSquare, ShoppingBag, Eye, HeartHandshake, Smile, RefreshCw, MessageCircle 
+  Truck, Star, MessageSquare, ShoppingBag, Eye, HeartHandshake, Smile, RefreshCw, MessageCircle, 
+  CarTaxiFrontIcon,
+  Ambulance
 } from 'lucide-react';
 import { motion } from 'motion/react';
 
@@ -181,72 +183,75 @@ const [activeWorkspace, setActiveWorkspace] = useState<'nfc' | 'memory' | 'gradu
 
     <main className="flex-1 w-full overflow-x-hidden">
 
-{/* HERO SECTION */}
+     {/* HERO SECTION */}
 <section className="relative overflow-hidden pt-12 pb-20 md:py-28 bg-gradient-to-b from-brand-cream to-brand-beige-50">
   
-  {/* Subtle top background decorative glows */}
-  <div className="absolute top-1/4 left-0 sm:left-10 w-48 sm:w-[300px] h-32 sm:h-48 bg-brand-sunset-400/10 rounded-full blur-3xl pointer-events-none" />
-  <div className="absolute top-1/2 right-0 sm:right-10 w-32 sm:w-[200px] h-24 sm:h-32 bg-brand-rose-200/20 rounded-full blur-3xl pointer-events-none" />
+  {/* Decorative Glows */}
+  <div className="absolute top-1/4 left-0 w-[300px] h-[300px] bg-brand-sunset-400/10 rounded-full blur-3xl pointer-events-none" />
 
-  <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-8">
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-12 items-center">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="flex flex-col lg:flex-row items-center gap-10 md:gap-12">
       
-      {/* Headline & details Left (Col-6) */}
-      <div className="lg:col-span-6 space-y-6 md:space-y-8 text-center lg:text-left order-2 lg:order-1">
+      {/* BAGIAN KIRI (Teks Utama & Gambar Mobile) */}
+      <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 md:space-y-8">
         
-        {/* Majestic Main Headline */}
-        <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-brand-brown-900 leading-[1.1] break-words">
+        {/* 1. JUDUL */}
+        <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-brand-brown-900 leading-[1.15]">
           Abadikan Momen, <br className="hidden sm:inline" />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-brown-700 via-brand-sunset-500 to-brand-rose-300 italic">
             Hadirkan Kenangan
           </span>
         </h1>
 
-        {/* Subheadline and supporting message */}
-        <p className="text-sm sm:text-base text-brand-brown-700 max-w-[450px] mx-auto lg:mx-0 leading-relaxed font-sans font-light px-2 sm:px-0">
-          Produk dekorasi personal premium untuk menemani tidur, mengenang orang tersayang, dan merayakan pencapaian hidup. Didesain minimalis oleh tangan terampil lokal.
+        {/* 2. GAMBAR (Hanya muncul di Mobile/Tablet) */}
+        <div className="lg:hidden w-full max-w-sm">
+          <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-brand-beige-200 bg-brand-beige-100">
+            <img src={HERO_IMG} alt="Santara Hero" className="w-full h-full object-cover" />
+          </div>
+        </div>
+
+        {/* 3. DESKRIPSI (Muncul setelah Gambar di Mobile) */}
+        <p className="text-sm sm:text-base text-brand-brown-700 max-w-xl leading-relaxed font-sans font-light">
+          Produk dekorasi personal premium untuk menemani tidur, mengenang orang tersayang, dan merayakan pencapaian hidup. Didesain secara minimalis dan dikerjakan penuh cinta oleh tangan terampil lokal.
         </p>
 
-        {/* Call-to-actions buttons */}
-        <div className="flex justify-center lg:justify-start pt-2">
-          <a 
-            href="#koleksi"
-            onClick={() => setActiveButton('koleksi')}
-            className={`w-full sm:w-auto px-8 py-4 font-sans font-semibold tracking-wide text-xs uppercase rounded-2xl flex items-center justify-center gap-2.5 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer
-              ${activeButton === 'koleksi' 
-                ? 'bg-sky-400 text-slate-950 font-bold'
-                : 'bg-slate-900 hover:bg-sky-400 text-white hover:text-slate-950 hover:font-bold'
-              }`}
-          >
-            <span>Lihat Koleksi</span>
-            <ArrowRight className={`w-4 h-4 transition-colors duration-300 ${activeButton === 'koleksi' ? 'text-slate-950' : 'text-sky-400'}`} />
-          </a>
-        </div>
+        {/* Call-to-actions */}
+<div className="w-full flex justify-center lg:justify-start pt-2">
+  <a 
+    href="#koleksi"
+    onClick={() => setActiveButton('koleksi')}
+    className={`px-8 py-4 font-sans font-semibold uppercase text-xs rounded-2xl flex items-center gap-2.5 shadow-md hover:shadow-lg transition-all duration-300
+      ${activeButton === 'koleksi' 
+        ? 'bg-sky-400 text-slate-950 font-bold' // Warna saat dipilih (Biru Muda)
+        : 'bg-slate-900 text-white hover:bg-sky-400 hover:text-slate-950 hover:font-bold' // Warna default (Biru Tua) dan saat hover (Biru Muda)
+      }`}
+  >
+    Lihat Koleksi 
+    <ArrowRight 
+      className={`w-4 h-4 transition-colors duration-300 ${
+        activeButton === 'koleksi' ? 'text-slate-950' : 'text-sky-400 group-hover:text-slate-950'
+      }`} 
+    />
+  </a>
+</div>
 
-        {/* Quick Trust badges - Grid 2x2 for better mobile layout */}
-        <div className="pt-8 border-t border-brand-beige-200/70 grid grid-cols-2 gap-4 lg:flex lg:gap-6 text-xs text-brand-brown-700">
-          <div className="flex items-center gap-1.5 font-medium"><ShieldCheck className="w-4 h-4 shrink-0 text-brand-sunset-500" /> Premium Material</div>
-          <div className="flex items-center gap-1.5 font-medium"><HeartHandshake className="w-4 h-4 shrink-0 text-brand-sunset-500" /> 100% Care</div>
-          <div className="flex items-center gap-1.5 font-medium col-span-2 lg:col-span-1 justify-center lg:justify-start"><Truck className="w-4 h-4 shrink-0 text-brand-sunset-500" /> Safe Nationwide</div>
+        {/* Quick Trust badges */}
+        <div className="pt-6 flex flex-wrap justify-center lg:justify-start gap-4 border-t border-brand-beige-200/70 text-xs text-brand-brown-700">
+          <div className="flex items-center gap-1.5 font-medium"><ShieldCheck className="w-4 h-4 text-brand-sunset-500" /> Premium Quality</div>
+          <div className="flex items-center gap-1.5 font-medium"><HeartHandshake className="w-4 h-4 text-brand-sunset-500" /> 100% Handcrafted</div>
+          <div className="flex items-center gap-1.5 font-medium"><Ambulance className="w-4 h-4 text-brand-sunset-500" /> Safe Nationwide</div>
         </div>
-
       </div>
 
-      {/* Photo Showcase Right (Col-6) */}
-      <div className="lg:col-span-6 relative flex justify-center order-1 lg:order-2 px-4 sm:px-0">
-        
-        {/* Backdrop glowing disc */}
-        <div className="absolute w-60 sm:w-80 h-60 sm:h-80 rounded-full bg-brand-sunset-400/20 blur-3xl z-0" />
-
-        <div className="relative w-full max-w-[340px] sm:max-w-lg aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-white/50 bg-brand-beige-100">
+      {/* BAGIAN KANAN (Hanya muncul di Desktop) */}
+      <div className="hidden lg:block lg:w-1/2 relative">
+        <div className="relative w-full max-w-lg aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-brand-beige-200 bg-brand-beige-100">
           <img
             src={HERO_IMG}
             alt="Santara Cozy Bedroom Mockup"
-            referrerPolicy="no-referrer"
-            className="w-full h-full object-cover transition-transform duration-1000 hover:scale-[1.03]"
+            className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
           />
         </div>
-
       </div>
 
     </div>
@@ -254,7 +259,7 @@ const [activeWorkspace, setActiveWorkspace] = useState<'nfc' | 'memory' | 'gradu
 </section>
 
 
-     {/* MAIN PRODUCT COLECTION SECTION */}
+{/* MAIN PRODUCT COLECTION SECTION */}
 <section
   id="koleksi"
   className="py-16 sm:py-20 bg-brand-beige-100/10 border-t border-brand-beige-200/30 overflow-x-hidden"

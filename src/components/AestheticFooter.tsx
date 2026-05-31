@@ -21,7 +21,7 @@ export default function AestheticFooter({ onNavigateWorkspace }: AestheticFooter
           {/* Column 1: Brand Info */}
           <div className="lg:col-span-7 space-y-4">
             <div className="flex items-center gap-1.5">
-              <span className="font-serif text-2xl font-black tracking-widest bg-gradient-to-r from-sky-400 via-indigo-400 to-purple-500 bg-clip-text text-transparent">
+              <span className="font-serif text-2xl font-black tracking-widest bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-300 bg-clip-text text-transparent">
                 SANTARA
               </span>
             </div>
