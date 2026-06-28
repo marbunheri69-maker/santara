@@ -68,11 +68,6 @@ export default function AestheticFooter({ onNavigateWorkspace }: AestheticFooter
         {/* Copyright & Bottom Info */}
         <div className="mt-8 flex flex-col md:flex-row items-center justify-between text-[11px] text-slate-400 font-medium space-y-3 md:space-y-0">
           <p>© 2026 SANTARA Creative. All rights reserved.</p>
-          <div className="flex items-center gap-1.5">
-            <span>Handmade with</span>
-            <Heart className="w-3 h-3 text-purple-400 fill-purple-400 animate-pulse" />
-            <span className="text-slate-300">in Indonesia for Couple & Cozy Home Bedroom</span>
-          </div>
         </div>
       </div>
     </footer>

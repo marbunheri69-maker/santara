@@ -54,7 +54,7 @@ const [activeWorkspace, setActiveWorkspace] = useState<'nfc' | 'memory' | 'gradu
   const productsData: Record<string, ProductDetail> = {
     nfc: {
       title: "NFC Sleep Ritual Crescent Lamp",
-      price: "Rp 75.000",
+      price: "Rp 97.000",
       badges: ["Smart NFC", "Sleep Ritual", "Aesthetic"],
       // Sediakan path gambar kedua kamu atau gunakan placeholder sementara ini dulu
       images: [NFC_LAMP_IMG, "/images/lampu2.jpeg"], 
@@ -63,7 +63,7 @@ const [activeWorkspace, setActiveWorkspace] = useState<'nfc' | 'memory' | 'gradu
     },
     memory: {
       title: "Botanical Memory Polaroid Frame",
-      price: "Rp 70.000",
+      price: "Rp 95.000",
       badges: ["Dried Flowers", "Polaroid Vibes", "Couple Gift"],
       images: [MEMORY_FRAME_IMG, "/images/bingkai2.jpeg"],
       desc: "Bingkai foto kustom kayu Oak/Walnut klasik dilengkapi hiasan rute kuntum bunga kering asli (pink sakura/lavender) hasil kurasi floris kami. Sempurna untuk mengabadikan anniversary atau merayakan jalinan persahabatan manis.",
@@ -71,7 +71,7 @@ const [activeWorkspace, setActiveWorkspace] = useState<'nfc' | 'memory' | 'gradu
     },
     graduation: {
       title: "Santara Luxury Graduation Acrylic",
-      price: "Rp 80.000",
+      price: "Rp 101.000",
       badges: ["8mm Thick Acrylic", "Laser Engraved", "Graduation"],
       images: [GRAD_PLAQUE_IMG, "/images/graduestio1.jpeg"],
       desc: "Hadiah kustom kelulusan berbahan akrilik tebal yang dipotong presisi. Kustomisasi nama wisudawan, gelar akademis, lambang universitas, ucapan selamat, dan sematkan portrait terbaik wisudawan ke dalam plakat meja premium.",
@@ -321,7 +321,7 @@ const [activeWorkspace, setActiveWorkspace] = useState<'nfc' | 'memory' | 'gradu
             onClick={(e) => e.stopPropagation()}
           >
             <span className="font-serif text-base sm:text-lg font-bold text-brand-brown-900">
-              Rp 75.000
+              Rp 97.000
             </span>
 
             <button
@@ -372,7 +372,7 @@ const [activeWorkspace, setActiveWorkspace] = useState<'nfc' | 'memory' | 'gradu
             onClick={(e) => e.stopPropagation()}
           >
             <span className="font-serif text-base sm:text-lg font-bold text-brand-brown-900">
-              Rp 70.000
+              Rp 95.000
             </span>
 
             <button
@@ -423,7 +423,7 @@ const [activeWorkspace, setActiveWorkspace] = useState<'nfc' | 'memory' | 'gradu
             onClick={(e) => e.stopPropagation()}
           >
             <span className="font-serif text-base sm:text-lg font-bold text-brand-brown-900">
-              Rp 80.000
+              Rp 101.000
             </span>
 
             <button
